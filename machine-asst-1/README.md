@@ -6,7 +6,7 @@ This is a Python script that manually converts decimal (Base 10) numbers into bi
 ## Features
 - Converts both positive and negative real numbers to binary.
 - Handles integers, fractions, and mixed numbers.
-- Limits the mantissa to 4 binary digits (configurable).
+- Limits the mantissa to 8 binary digits (configurable).
 - Command-line interface for batch conversions.
 
 ---

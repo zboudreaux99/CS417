@@ -1,6 +1,6 @@
 import sys
 
-MANTISSA_DIGITS = 4 # Maximum number of digits after decimal in binary
+MAX_DIGITS = 8 # Maximum number of digits after decimal in binary
 
 def convert_integer_part(n):
     """
@@ -16,11 +16,11 @@ def convert_integer_part(n):
 
 def convert_fractional_part(frac):
     """
-    Manually convert a fractional part to binary up to MANTISSA_DIGITS digits.
+    Manually convert a fractional part to binary up to MAX_DIGITS digits.
     """
     bits = []
     count = 0
-    while frac > 0 and count < MANTISSA_DIGITS:
+    while frac > 0 and count < MAX_DIGITS:
         frac *= 2
         if frac >= 1:
             bits.append("1")
@@ -58,12 +58,12 @@ def main():
 
     inputs = [float(arg) for arg in sys.argv[1:]]
 
-    print("| Base 10 | Base 2       |")
-    print("| :------ | :----------- |")
+    print("| Base 10 | Base 2        |")
+    print("| :------ | :-----------  |")
 
     for num in inputs:
         binary = decimal_to_binary(num)
-        print(f"| {num:<8}| {binary:<11}  |")
+        print(f"| {num:<8}| {binary:<12}  |")
 
 if __name__ == "__main__":
     main()

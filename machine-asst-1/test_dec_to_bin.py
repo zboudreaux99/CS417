@@ -28,9 +28,9 @@ class TestDecimalToBinary(unittest.TestCase):
         self.assertEqual(decimal_to_binary(-2.75), "-10.11")
 
     def test_truncation(self):
-        # Should only show up to 4 digits after decimal
-        self.assertEqual(decimal_to_binary(0.1), "0.0001")
-        self.assertEqual(decimal_to_binary(0.3), "0.0100")
+        # Should only show up to 8 digits after decimal
+        self.assertEqual(decimal_to_binary(0.1), "0.00011001")
+        self.assertEqual(decimal_to_binary(0.3), "0.01001100")
 
 if __name__ == '__main__':
     unittest.main()

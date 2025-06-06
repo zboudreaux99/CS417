@@ -4,7 +4,7 @@ MAX_DIGITS = 8  # Max digits after base point
 EPSILON = 1e-10  # Tolerance for floating-point comparison
 
 
-def convert_fractional_to_base(frac: float, base: int) -> str:
+def convert_fractional_to_base(frac, base):
     """
     Convert the fractional part of a decimal number to a given base.
     Returns a semicolon-separated digit string, limited to MAX_DIGITS.
@@ -15,7 +15,7 @@ def convert_fractional_to_base(frac: float, base: int) -> str:
         frac *= base
         digit = int(round(frac))
         if digit >= base:
-            digit = base - 1  # clamp if rounding goes over
+            digit = base - 1  # Cap digit to base-1 to avoid overflow
         digits.append(str(digit))
         frac -= digit
         if abs(frac) < EPSILON:

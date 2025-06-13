@@ -21,8 +21,8 @@ def print_derivative_table(x=1.0, max_power=30):
     true_val = known_derivative(x)
 
     # Table header
-    print(f"|{'h':^6}|{'x':>15}|{'Approx. f(x)':>15}|{'Known f(x)':>15}|{'Abs. Error':>15}|")
-    print(f"|:----:|{'':->15}|{'':->15}|{'':->15}|{'':->15}|")
+    print(f"|{'h':^5}|{'x':^15}|{'Approx. f(x)':^15}|{'Known f(x)':^15}|{'Abs. Error':^15}|")
+    print(f"|:---:|{'':->15}|{'':->15}|{'':->15}|{'':->15}|")
 
     for i in range(1, max_power + 1):
         h = 2 ** -i

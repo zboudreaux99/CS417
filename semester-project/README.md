@@ -1,5 +1,5 @@
 # Course Project
-This script reads a raw core temperature log file, parses the data using a provided `parse_temps` module, and writes the parsed output to both a structured JSON file and a set of per-core linear interpolation files.
+This project processes core temperature logs to generate a readable report for each CPU core. It performs **piecewise linear interpolation** as well as **global least-squares approximation** on the collected data.
 
 ## Features
 - Included test core data in `cpu_data/`

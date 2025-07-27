@@ -1,11 +1,12 @@
 import sys
 import json
 from parse_temps import parse_raw_temps
-from linear_interpolation import linear_interpolate, write_interpolation_files
+from linear_interpolation import write_all_interpolations
 
 def main():
     input_data = sys.argv[1]
     parsed_data = dict()
+
     with open(input_data, "r") as data_file:
         for data in parse_raw_temps(data_file):
             time, core_temps = data
@@ -21,9 +22,9 @@ def main():
     x_vals = [t for t, _ in sorted_items]
     y_vals = [temps for _, temps in sorted_items]
 
-    # Write interpolation equations per core
+    # Write interpolation + least-squares lines per core
     base_name = input_data.replace(".txt", "")
-    write_interpolation_files(x_vals, y_vals, base_filename=base_name)
+    write_all_interpolations(x_vals, y_vals, base_filename=base_name)
     print(f"Interpolation files written with base name: {base_name}")
 
 if __name__ == "__main__":
